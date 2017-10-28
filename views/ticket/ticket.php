@@ -47,10 +47,7 @@
                             <div class="col-md-5">
                                 <div class="form-group label-floating">
                                     <label class="control-label">Admission Number</label>
-                                    <select name='admission-no' class="form-control">
-                                        <option></option>
-                                        <?php admission_list($conn);?>
-                                    </select>
+                                    <input type="text" name='admission-no' class="form-control">
                                 </div>
                             </div>
 
@@ -58,8 +55,8 @@
                         <div class="row">
                             <div class="col-md-5">
                                 <div class="form-group label-floating">
-                                    <label class="control-label">Mobile Number</label>
-                                    <input type="text" name='mobile-no' value="" class="form-control">
+                                    <label class="control-label">Receipt Number</label>
+                                    <input type="text" name='receipt-no' value="" class="form-control">
                                 </div>
                             </div>
                         </div>

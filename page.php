@@ -36,6 +36,20 @@ switch ($page){
         include_once "template/default.php";
     break;
 
+    case "profile-add";
+        include_once "config/config.php";
+        include_once "models/global.php";
+        $noification = "views/dashboard/noification.php";
+        $page_views = "views/profile/profile.add.php";
+        include_once "template/default.php";
+    break;
+
+    case"user-profile-add-data";
+        include_once "config/config.php";
+        include_once "models/global.php";
+        include_once "models/profile.add.php";
+    break;
+
     case"user-profile-view";
         echo $id=$_GET['id'];
         include_once "config/config.php";

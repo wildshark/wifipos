@@ -16,6 +16,12 @@
         </a>
     </li>
     <li>
+        <a href="page.php?page=profile-add">
+            <i class="material-icons">Ticket</i>
+            <p>New Profile </p>
+        </a>
+    </li>
+    <li>
         <a href="page.php?page=user-profile">
             <i class="material-icons">person</i>
             <p>User Profile</p>

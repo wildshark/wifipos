@@ -9,15 +9,25 @@
 $date=date('Y-m-d');
 $package=$_GET['package'];
 $admission=$_GET['admission-no'];
-$mobile=$_GET['mobile-no'];
+$receipt=$_GET['receipt-no'];
 
 $ticket= date('YmdHis');
 
-$sql="INSERT INTO `sales_book` (`studentID`, `pay_date`, `packageID`, `unit`, `amount`) VALUES ('$admission', '$date', '$package', '0', '0')";
-$result=$conn->query($sql);
+$sql_admission="select * from student_wifi_data WHere admissionNo='$admission'";
+$result=$conn->query($sql_admission);
+$r=$result->fetch_assoc();
 
-if ($result === TRUE){
-    header("location: page.php?page=ticket");
+if ($r['admissionNo']==$admission) {
+     $studentID=$r['studentID'];
+   echo $sql = "INSERT INTO `sales_book` (`studentID`, `pay_date`, `packageID`, `unit`, `amount`) VALUES ('$studentID', '$date', '$package','$receipt', '0')";
+   $result = $conn->query($sql);
+
+   if ($result === TRUE) {
+        header("location: page.php?page=ticket");
+   } else {
+        echo "Connection failed try again";
+   }
+
 }else{
-    echo"Connection failed try again";
+    echo"Worry admission number";
 }

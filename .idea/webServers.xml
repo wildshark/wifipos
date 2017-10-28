@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="5556b8b9-7a4b-4162-87e4-130cc0d899e0" name="wifipos" url="http://192.168.2.208">
+        <fileTransfer host="192.168.2.208" port="21" rootFolder="/wifibilling">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

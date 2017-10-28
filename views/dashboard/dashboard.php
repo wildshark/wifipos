@@ -7,24 +7,21 @@
  */
 
 function data_sheet($conn){
-    $sql = "Select * from  student_wifi_data  LIMIT 0,8";
+
+    $sql = "Select * from  sales LIMIT 0,8";
     $result = $conn->query($sql);
-    while ($row = $result->fetch_assoc() ){
-        if ($row['status'] === 1) {
-            $status = "Active";
-        } else {
-            $status = "Passive";
-        }
+    while ($row = $result->fetch_assoc()) {
+
         echo "
-        <tr>
-             <td>{$row['fname']}</td>
-             <td>{$row['surname']}</td>
-             <td>{$row['admissionNo']}</td>
-             <td>{$row['mobileNo']}</td>
-             <td>{$status}</td>
-             <td><a href='page.php?page=user-profile-view&id=".$row['studentID']."' class='btn btn-xs btn-default'>View
-             <a href='page.php?page=user-profile-edit&id=".$row['studentID']."' class='btn btn-xs btn-default'>Edit</a></td>
-        </tr>";
+            <tr>
+                <td>{$row['paymentID']}</td>
+                <td>{$row['pay_date']}</td>
+                <td>{$row['package']}</td>
+                <td>{$row['admissionNo']}</td>
+                <td>{$row['mobileNo']}</td>
+                <td>{$row['unit']}</td>
+                <td>{$row['amount']}</td>            
+            </tr>";
     }
 }
 ?>
@@ -110,15 +107,17 @@ function data_sheet($conn){
                 <div class="card-content table-responsive">
                     <table class="table">
                         <thead class="text-primary">
-                        <th>First Name</th>
-                        <th>Surname</th>
-                        <th>Admission No#</th>
-                        <th>Mobile No#</th>
-                        <th>Status</th>
-                        <th></th>
+                            <th>Serial #</th>
+                            <th>Date</th>
+                            <th>Package</th>
+                            <th>AdmissionNo</th>
+                            <th>MobileNo#</th>
+                            <th>Receipt No#</th>
+                            <th>Amount</th>
+                            <th></th>
                         </thead>
                         <tbody>
-                        <?php data_sheet($conn);?>
+                            <?php data_sheet($conn);?>
                         </tbody>
                     </table>
                 </div>
