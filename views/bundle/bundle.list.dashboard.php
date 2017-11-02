@@ -2,20 +2,22 @@
 /**
  * Created by PhpStorm.
  * User: Andrew Quaye
- * Date: 24-Oct-17
- * Time: 7:27 AM
+ * Date: 02-Nov-17
+ * Time: 12:26 AM
  */
 
 function data_sheet($conn){
-    $sql = "Select * from  package";
+    $sql = "Select * from  all_package";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc() ){
-
+        $amount = $row['amount'] * $row['pack'];
         echo "
         <tr>
              <td>{$row['packageID']}</td>
              <td>{$row['package']}</td>
-             <td>{$row['amount']}</td>            
+             <td>{$row['amount']}</td>
+             <td>{$row['pack']}</td>
+             <td>{$amount}</td>
              <td>
                 <a href='page.php?page=bundle-edit&id=".$row['packageID']."' class='btn btn-xs btn-default'>Edit</a>
                 <a href='page.php?page=bundle-delete&id=".$row['packageID']."' class='btn btn-xs btn-default'>Delete</a>
@@ -38,6 +40,8 @@ function data_sheet($conn){
                         <th>Serial #</th>
                         <th>Package</th>
                         <th>Amount</th>
+                        <th>Qty</th>
+                        <th>Total</th>
                         <th></th>
                         </thead>
                         <tbody>

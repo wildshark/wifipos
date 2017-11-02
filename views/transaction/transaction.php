@@ -2,24 +2,26 @@
 /**
  * Created by PhpStorm.
  * User: Andrew Quaye
- * Date: 24-Oct-17
- * Time: 7:27 AM
+ * Date: 28-Oct-17
+ * Time: 9:08 AM
  */
 
-function data_sheet($conn){
-    $sql = "Select * from  package";
+$id= $_SESSION['id'];
+
+function data_sheet($conn,$id){
+    $sql = "Select * from  sales where studentID='$id'";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc() ){
 
         echo "
         <tr>
-             <td>{$row['packageID']}</td>
+             <td>{$row['paymentID']}</td>
+             <td>{$row['pay_date']}</td>
              <td>{$row['package']}</td>
-             <td>{$row['amount']}</td>            
-             <td>
-                <a href='page.php?page=bundle-edit&id=".$row['packageID']."' class='btn btn-xs btn-default'>Edit</a>
-                <a href='page.php?page=bundle-delete&id=".$row['packageID']."' class='btn btn-xs btn-default'>Delete</a>
-             </td>
+             <td>{$row['admissionNo']}</td>
+             <td>{$row['mobileNo']}</td>
+             <td>{$row['amount']}</td>
+       
         </tr>";
     }
 }
@@ -36,12 +38,14 @@ function data_sheet($conn){
                     <table class="table">
                         <thead class="text-primary">
                         <th>Serial #</th>
+                        <th>Date</th>
                         <th>Package</th>
+                        <th>AdmissionNo</th>
+                        <th>MobileNo#</th>
                         <th>Amount</th>
-                        <th></th>
                         </thead>
                         <tbody>
-                        <?php data_sheet($conn);?>
+                        <?php data_sheet($conn,$id);?>
                         </tbody>
                     </table>
                 </div>
@@ -49,4 +53,3 @@ function data_sheet($conn){
         </div>
     </div>
 </div>
-

@@ -7,6 +7,7 @@
  */
 
 $id=$_GET['id'];
+$_SESSION['id']=$id;
 
 $sql="Select * from  student_wifi_data WHERE studentID='$id'";
 $result=$conn->query($sql);
@@ -123,7 +124,7 @@ function sales($conn,$id){
                     <p class="card-content">
                         <?php  sales($conn,$id);?>
                     </p>
-                    <a href="#pablo" class="btn btn-primary btn-round">Follow</a>
+                    <a href="page.php?page=transaction-ledger" class="btn btn-primary btn-round">ledger</a>
                 </div>
             </div>
         </div>

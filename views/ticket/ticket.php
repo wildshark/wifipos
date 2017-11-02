@@ -9,12 +9,16 @@
 ?>
 
 <div class="container-fluid">
+
     <div class="row">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header" data-background-color="purple">
                     <h4 class="title">Edit Profile</h4>
                     <p class="category">Complete your profile</p>
+                </div>
+                <div class="col-md-8">
+                    <?php include_once "models/alert.php";?>
                 </div>
                 <div class="card-content">
                     <form>
@@ -23,6 +27,22 @@
                                 <div class="form-group label-floating">
                                     <label class="control-label">Ticket Date</label>
                                     <input type="text" name='time' value="<?php echo date('D, d M Y H:i:s');?>" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Receipt Number</label>
+                                        <input type="text" name='receipt-no' value="AA<?php echo date('YmdHis');?>" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Admission Number</label>
+                                    <input type="text" name='admission-no' class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-3">
@@ -43,23 +63,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-5">
-                                <div class="form-group label-floating">
-                                    <label class="control-label">Admission Number</label>
-                                    <input type="text" name='admission-no' class="form-control">
-                                </div>
-                            </div>
 
-                        </div>
-                        <div class="row">
-                            <div class="col-md-5">
-                                <div class="form-group label-floating">
-                                    <label class="control-label">Receipt Number</label>
-                                    <input type="text" name='receipt-no' value="" class="form-control">
-                                </div>
-                            </div>
-                        </div>
                         <button type="submit" name="page" value="ticket-add" class="btn btn-primary pull-right">Submit</button>
                         <button type="reset" name="page" value="ticket-add" class="btn btn-primary pull-right">New</button>
                         <div class="clearfix"></div>

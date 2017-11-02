@@ -19,7 +19,6 @@ function data_sheet($conn){
                 <td>{$row['package']}</td>
                 <td>{$row['admissionNo']}</td>
                 <td>{$row['mobileNo']}</td>
-                <td>{$row['unit']}</td>
                 <td>{$row['amount']}</td>            
             </tr>";
     }
@@ -98,6 +97,81 @@ function data_sheet($conn){
         </div>
     </div>
     <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-header" data-background-color="orange">
+                    <i class="material-icons">content_copy</i>
+                </div>
+                <div class="card-content">
+                    <p class="category">1GB Pack</p>
+                    <h3 class="title">
+                        <?php data1gb($conn);?>
+                    </h3>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons text-danger">warning</i>
+                        <a href="page.php?page=all-package">Get More Space...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-header" data-background-color="green">
+                    <i class="material-icons">store</i>
+                </div>
+                <div class="card-content">
+                    <p class="category">2.4GB Pack</p>
+                    <h3 class="title">
+                        <?php data2gb($conn);?>
+                    </h3>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons">date_range</i> Last 24 Hours
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-header" data-background-color="red">
+                    <i class="material-icons">info_outline</i>
+                </div>
+                <div class="card-content">
+                    <p class="category">5GB Pack</p>
+                    <h3 class="title">
+                        <?php data3gb($conn);?>
+                    </h3>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons">local_offer</i> Tracked from Github
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-header" data-background-color="blue">
+                    <i class="fa fa-twitter"></i>
+                </div>
+                <div class="card-content">
+                    <p class="category">10GB Pack</p>
+                    <h3 class="title">
+                        <?php data4gb($conn);?>
+                    </h3>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons">update</i> Just Updated
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header" data-background-color="purple">
@@ -112,7 +186,6 @@ function data_sheet($conn){
                             <th>Package</th>
                             <th>AdmissionNo</th>
                             <th>MobileNo#</th>
-                            <th>Receipt No#</th>
                             <th>Amount</th>
                             <th></th>
                         </thead>

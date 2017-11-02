@@ -6,4 +6,4 @@
  * Time: 12:55 PM
  */
 
-header("location: page.php?page=dashboard");
+header("location: page.php?page=login");

@@ -34,3 +34,53 @@ function admission_list($conn){
         echo"<option value='{$row['studentID']}'>{$row['admissionNo']}</option>";
     }
 }
+
+//data pack
+
+function data1gb($conn)
+{
+    $sql = "SELECT * FROM data_pack WHERE bundle_type=1";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    if (!$row['pack']) {
+        echo "0.00";
+    } else {
+        echo $row['pack'];
+    }
+}
+
+function data2gb($conn){
+    $sql="SELECT * FROM data_pack WHERE bundle_type=2";
+    $result=$conn->query($sql);
+    $row=$result->fetch_assoc();
+
+    if (!$row['pack']){
+        echo "0.00";
+    }else{
+        echo $row['pack'];
+    };
+}
+
+function data3gb($conn){
+    $sql="SELECT * FROM data_pack WHERE bundle_type=3";
+    $result=$conn->query($sql);
+    $row=$result->fetch_assoc();
+
+    if (!$row['pack']){
+        echo "0.00";
+    }else{
+        echo $row['pack'];
+    };
+}
+
+function data4gb($conn){
+    $sql="SELECT * FROM data_pack WHERE bundle_type=3";
+    $result=$conn->query($sql);
+    $row=$result->fetch_assoc();
+
+    if (!$row['pack']){
+        echo "0.00";
+    }else{
+        echo $row['pack'];
+    };
+}

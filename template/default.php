@@ -6,7 +6,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="template/assets/img/apple-icon.png" />
     <link rel="icon" type="template/image/png" href="template/assets/img/favicon.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Material Dashboard by Creative Tim</title>
+    <title><?php echo $title;?></title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
     <!-- Bootstrap core CSS     -->
@@ -30,7 +30,7 @@
 -->
         <div class="logo">
             <a href="http://www.creative-tim.com" class="simple-text">
-                Wifi Biller
+                <?php echo $page_title;?>
             </a>
         </div>
         <div class="sidebar-wrapper">
@@ -62,7 +62,7 @@
                         </li>
                         <li>
                             <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="material-icons">person</i>
+                                <i class="material-icons">exit_to_app</i>
                                 <p class="hidden-lg hidden-md">Profile</p>
                             </a>
                         </li>
@@ -112,7 +112,7 @@
                     <script>
                         document.write(new Date().getFullYear())
                     </script>
-                    <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
+                    <a href="http://iquipedigital.com"><?php echo $copyright;?></a>, make life better.
                 </p>
             </div>
         </footer>

@@ -7,10 +7,23 @@
  */
 
 include_once "session.php";
+include_once "config/page.config.php";
 
 $page= $_GET['page'];
 
 switch ($page){
+
+
+    case"login";
+        include_once "login/login.php";
+    break;
+
+    case"log-me-in";
+        include_once "config/config.php";
+        include_once "models/global.php";
+        include_once "models/login.php";
+    break;
+
     case"dashboard";
         include_once "config/config.php";
         include_once "models/global.php";
@@ -142,6 +155,28 @@ switch ($page){
         $noification = "views/dashboard/noification.php";
         $page_views = "views/sales/sales.list.php";
         include_once "template/default.php";
+    break;
+
+    case"transaction-ledger";
+        include_once "config/config.php";
+        include_once "models/global.php";
+        $noification = "views/dashboard/noification.php";
+        $page_views = "views/transaction/transaction.php";
+        include_once "template/default.php";
+    break;
+
+    case"all-package";
+        include_once "config/config.php";
+        include_once "models/global.php";
+        $noification = "views/dashboard/noification.php";
+        $page_views= "views/bundle/bundle.list.dashboard.php";
+        include_once "template/default.php";
+    break;
+
+    case"print-ticket";
+        include_once "config/config.php";
+        include_once "models/global.php";
+        include_once "views/ticket/print.ticket.php";
     break;
 
 }

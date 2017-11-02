@@ -12,7 +12,7 @@ date_default_timezone_set('UTC');
 //database connection
 $servername = "localhost";
 $username = "root";
-$password = "usbw";
+$password = "";
 $database = "student_wifi";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);
